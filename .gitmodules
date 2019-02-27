@@ -1,0 +1,3 @@
+[submodule ".\\src\\modules\\EspalierJS"]
+	path = .\\src\\modules\\EspalierJS
+	url = https://github.com/jeremeevans/EspalierJS.git
