@@ -23,6 +23,10 @@ function runWebpack(done) {
     https: config.devServer.https
   } as any;
 
+  if (config.devServer.public) {
+    opts.public = config.devServer.public;
+  }
+
   // Add the webpack-dev-server client to the webpack entry point
   // The path for the client to use such as `webpack-dev-server/client?http://${opts.host}:${opts.port}/` is not required
   // The path used is derived from window.location in the browser and output.publicPath in the webpack.config.

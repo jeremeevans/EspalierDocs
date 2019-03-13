@@ -1,0 +1,15 @@
+<template>
+  <require from="./controls-demo.css"></require>
+
+  <form id="address-form">
+    <esp-input view-model.ref="addressControl" class="address" controlid="address" label="Address" value.bind="model.address & validate"></esp-input>
+    <esp-input class="city" controlid="city" label="City" value.bind="model.city & validate"></esp-input>
+    <esp-input class="state" controlid="state" label="State" value.bind="model.state & validate"></esp-input>
+    <esp-input class="zip" mask="00000" controlid="zip" label="Zip" value.bind="model.zip & validate"></esp-input>
+    <esp-input class="name" controlid="name" label="Name" value.bind="model.name & validate"></esp-input>
+    <esp-input class="phone" mask="(000) 000-0000" controlid="phone" label="Phone" value.bind="model.phone & validate"></esp-input>
+    <footer class="buttons">
+      <button type="submit" class="primary">Check for Service</button>
+    </footer>
+  </form>
+</template>

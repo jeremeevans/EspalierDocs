@@ -1,0 +1,26 @@
+form#address-form {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 40em;
+}
+
+form#address-form .address {
+  width: 100%;
+}
+
+form#address-form .city {
+  flex-grow: 1;
+}
+
+form#address-form .state {
+  width: 5em;
+  margin: 0 1em;
+}
+
+form#address-form .zip {
+  width: 10em;
+}
+
+form#address-form footer.buttons {
+  width: 100%;
+}

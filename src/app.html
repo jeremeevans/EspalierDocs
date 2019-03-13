@@ -1,9 +1,14 @@
 <template>
-  <h1>${message}</h1>
+  <require from="./app.scss"></require>
+  <h2>A Grid Pulling from a Web Service</h2>
 
-  <form>
-    <esp-input controlid="hello" label="Hello!"></esp-input>
-    <esp-date controlid="adate" label="Pick a date"></esp-date>
-    <esp-checkbox controlid="checkme" label="Check me!"></esp-checkbox>
-  </form>
+  <esp-grid view-model.ref="dynamicGrid"></esp-grid>
+
+  <h2>A Grid</h2>
+
+  <esp-grid view-model.ref="staticGrid"></esp-grid>
+
+  <section>
+    <router-view></router-view>
+  </section>
 </template>

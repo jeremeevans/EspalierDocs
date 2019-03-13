@@ -1,4 +1,5 @@
 const path = require('path');
+const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -142,7 +143,12 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
   devServer: {
     contentBase: outDir,
     // serve index.html for all 404 (required for push-state)
-    historyApiFallback: true
+    historyApiFallback: true,
+    public: "espalierjs.test:443",
+    https: {
+      key: fs.readFileSync('./certs/server.key'),
+      cert: fs.readFileSync('./certs/server.cer')
+    }
   },
   devtool: production ? 'nosources-source-map' : 'cheap-module-eval-source-map',
   module: {
