@@ -1,6 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
 body,
 html {
   font-family: 'Overpass Mono', monospace;
+  color: rgb(1, 23, 35);
 }
 
 h1,
@@ -9,4 +14,56 @@ h3,
 h4,
 h5 {
   font-family: 'Lato', sans-serif;
+  color: rgb(73,28,2);
+}
+
+nav.top-nav {
+  display: flex;
+  background: rgb(2, 47, 73);
+
+  a.logo {
+    display: inline-block;
+    padding: 6px 0 0;
+    background-color: #85ce07;
+    border: 1px solid rgba(85, 132, 4, .2);
+    border-radius: .1em;
+    height: 31.2px;
+    margin: .75em;
+  }
+
+  a.text {
+    color: white;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    margin: 0 .25em;
+    font-size: 1.25em;
+    text-align: center;
+    line-height: 2.76em;
+  }
+}
+
+header.espalierjs-hero {
+  display: flex;
+
+  .words {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+
+    h1,
+    h2 {
+      margin: 0;
+    }
+  }
+
+  .logo {
+    padding: 20px 0 0;
+    background-color: #85ce07;
+    border: 1px solid rgba(85, 132, 4, .2);
+    border-radius: .15em;
+    display: inline-block;
+    height: 99px;
+    margin: .5em;
+  }
 }

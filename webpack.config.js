@@ -183,8 +183,6 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
       },
       { test: /\.html$/i, loader: 'html-loader' },
       { test: /\.ts$/, loader: "ts-loader" },
-      // use Bluebird as the global Promise implementation:
-      { test: /[\/\\]node_modules[\/\\]bluebird[\/\\].+\.js$/, loader: 'expose-loader?Promise' },
       // embed small images and fonts as Data Urls and larger ones as files:
       { test: /\.(png|gif|jpg|cur)$/i, loader: 'url-loader', options: { limit: 8192 } },
       { test: /\.woff2(\?v=[0-9]\.[0-9]\.[0-9])?$/i, loader: 'url-loader', options: { limit: 10000, mimetype: 'application/font-woff2' } },
@@ -201,9 +199,6 @@ module.exports = ({ production, server, extractCss, coverage, analyze, karma } =
   plugins: [
     ...when(!karma, new DuplicatePackageCheckerPlugin()),
     new AureliaPlugin(),
-    new ProvidePlugin({
-      'Promise': 'bluebird',
-  }),
     new ModuleDependenciesPlugin({
       'aurelia-testing': ['./compile-spy', './view-spy']
     }),

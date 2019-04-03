@@ -21,7 +21,7 @@ export class App {
     this.rootRouter = router;
     const routes: Array<RouteConfig> = [{
       route: "",
-      name: "ControlsDemo",
+      name: "home",
       moduleId: PLATFORM.moduleName("./controls-demo"),
       title: "Espalier Controls Demo"
     }];

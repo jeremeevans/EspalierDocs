@@ -5,6 +5,7 @@ export function configure(config: FrameworkConfiguration) {
     PLATFORM.moduleName("../modules/EspalierJS/src/grid/espalier"),
     PLATFORM.moduleName("../modules/EspalierJS/src/form-controls/espalier-checkbox"),
     PLATFORM.moduleName("../modules/EspalierJS/src/form-controls/espalier-date"),
-    PLATFORM.moduleName("../modules/EspalierJS/src/form-controls/espalier-input")
+    PLATFORM.moduleName("../modules/EspalierJS/src/form-controls/espalier-input"),
+    PLATFORM.moduleName("../modules/EspalierJS/src/form-controls/espalier-select")
   ]);
 }

@@ -1,13 +1,22 @@
 <template>
   <require from="./controls-demo.css"></require>
 
-  <form id="address-form">
-    <esp-input view-model.ref="addressControl" class="address" controlid="address" label="Address" value.bind="model.address & validate"></esp-input>
+  <form id="address-form" submit.trigger="seeSomeThings()">
+    <esp-input view-model.ref="addressControl" autocomplete.one-time="lookupAddress"
+      autocomplete-selected.one-time="selectAddress" class="address" controlid="address" label="Address"
+      value.bind="model.address & validate"></esp-input>
     <esp-input class="city" controlid="city" label="City" value.bind="model.city & validate"></esp-input>
-    <esp-input class="state" controlid="state" label="State" value.bind="model.state & validate"></esp-input>
+    <esp-select class="state" select-options.one-time="allStates" controlid="state" label="State"
+      value.bind="model.state"></esp-select>
     <esp-input class="zip" mask="00000" controlid="zip" label="Zip" value.bind="model.zip & validate"></esp-input>
     <esp-input class="name" controlid="name" label="Name" value.bind="model.name & validate"></esp-input>
-    <esp-input class="phone" mask="(000) 000-0000" controlid="phone" label="Phone" value.bind="model.phone & validate"></esp-input>
+    <esp-input class="phone" mask="(000) 000-0000" controlid="phone" label="Phone" value.bind="model.phone & validate">
+    </esp-input>
+    <esp-date label="Event Date" value.bind="model.aDate & validate"></esp-date>
+
+    <h3>Underlying Date</h3>
+    <p>${model.aDate}</p>
+
     <footer class="buttons">
       <button type="submit" class="primary">Check for Service</button>
     </footer>

@@ -1,5 +1,22 @@
 <template>
   <require from="./app.scss"></require>
+
+  <nav class="top-nav">
+    <a class="logo" href.one-time="rootRouter.generate('home')">
+      <img width="30px" src="/espalier-js-positive.svg" alt="EspalierJS Logo">
+    </a>
+    <a class="text" href.one-time="rootRouter.generate('home')">Home</a>
+  </nav>
+
+  <header class="espalierjs-hero">
+    <div class="words">
+      <h1>EspalierJS</h1>
+      <h2>Controls for Aurelia</h2>
+    </div>
+    <div class="logo">
+      <img width="100px" src="/espalier-js-positive.svg" alt="EspalierJS Logo">
+    </div>
+  </header>
   <h2>A Grid Pulling from a Web Service</h2>
 
   <esp-grid view-model.ref="dynamicGrid"></esp-grid>

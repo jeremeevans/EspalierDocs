@@ -1,13 +1,11 @@
 /// <reference types="aurelia-loader-webpack/src/webpack-hot-interface"/>
-import {Aurelia} from 'aurelia-framework'
+import { Aurelia } from 'aurelia-framework'
 import environment from './environment';
-import {PLATFORM} from 'aurelia-pal';
-import * as Bluebird from 'bluebird';
-
-// remove out if you don't want a Promise polyfill (remove also from webpack.config.js)
-Bluebird.config({ warnings: { wForgottenReturn: false } });
+import { PLATFORM } from 'aurelia-pal';
+import { Polyfills } from 'modules/EspalierJS/src/polyfills';
 
 export function configure(aurelia: Aurelia) {
+  new Polyfills().apply();
   aurelia.use
     .standardConfiguration()
     .feature(PLATFORM.moduleName('resources/index'))
